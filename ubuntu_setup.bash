@@ -15,7 +15,7 @@ sudo apt install -y exfat-fuse exfat-utils
 sudo apt purge -y firefox
 
 # 3 sudo apt-get install (-qq)
-sudo apt install -y tmux screen vim htop libgnome2-bin git vlc ubuntu-restricted-extras openssh-server openssh-client nmap
+sudo apt install -y tmux screen vim htop libgnome2-bin git vlc ubuntu-restricted-extras openssh-server openssh-client nmap net-tools
 
 git config --global user.email "elijahsjlee@gmail.com"
 git config --global user.name "Elijah S. Lee"
