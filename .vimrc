@@ -13,7 +13,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'gmarik/vundle'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree.git'
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'terryma/vim-smooth-scroll'
@@ -21,7 +21,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
-Plugin 'frazrepo/vim-rainbow'     "different colors for parenthesis
+" Plugin 'frazrepo/vim-rainbow'     "different colors for parenthesis
 Plugin 'mhinz/vim-signify'        "git change shown on lines
 Plugin 'jiangmiao/auto-pairs'     "auto generate parenthesis
 Plugin 'othree/xml.vim'           "xml auto tag
@@ -62,7 +62,6 @@ syntax on
 syntax enable
 set hlsearch
 set background=dark
-colorscheme solarized
 
 " Ctrl-P
 let g:ctrlp_map = '<c-p>'
@@ -73,7 +72,7 @@ let g:ctrlp_working_path_mode = 0 " ctrlp search path should not change after in
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " remap <leader>cc to ,cc and allow longer time
-let mapleader=","
+let mapleader=" "
 "set timeout timeoutlen=1500
 
 " Automatically reload file if changed on disk
@@ -174,6 +173,11 @@ let g:rainbow_active = 1
 "nerd tree open close toggle shortcut"
 nmap <c-n> :NERDTreeToggle<CR>
 
+"solve slow down of git signify but the main problem was to disable rainbow parenthesis
+let g:signify_vcs_list = ['git']
+let g:signfiy_update_on_bufenter=0
+set signcolumn=yes
+
 "recognize non-xml (.launch) as .xml
 autocmd BufEnter *.launch :setlocal filetype=xml
 
@@ -187,6 +191,15 @@ cnoremap <C-h> <Left>
 cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
+
+"git fugutive shortcut
+nmap <leader>gg :G<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gp :Gpush<CR>
+nmap <leader>j <c-w>w
+nmap <leader>k <c-w>W
+
 
 
 
