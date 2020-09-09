@@ -32,7 +32,7 @@ git config --global alias.spush 'push --recurse-submodules=on-demand'
 
 
 # 4 python
-sudo apt install -y python3 python3-pip python3-matplotlib python3-vcstool
+sudo apt install -y python3 python3-pip python3-matplotlib python3-vcstool python3-opencv
 sudo pip3 install numpy scipy pyqtgraph pyqt5 torch torchvision pyserial rospkg defusedxml pyzmq requests opencv-python 
 sudo pip3 install --upgrade scipy
 
