@@ -194,6 +194,7 @@ cnoremap <C-l> <Right>
 
 "git fugutive shortcut
 nmap <leader>gg :G<CR>
+nmap <leader>gc :Gcommit<CR>
 nmap <leader>gf :diffget //2<CR>
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gp :Gpush<CR>
