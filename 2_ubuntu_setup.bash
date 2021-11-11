@@ -39,23 +39,25 @@ sudo pip3 install --upgrade scipy
 
 # 5 ROS Setup
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+sudo apt install curl # if you haven't already installed curl
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 sudo apt update
-sudo apt -y install ros-melodic-desktop-full
-echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+sudo apt -y install ros-noetic-desktop-full
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
-sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
-sudo apt install -y ros-melodic-rqt*
-sudo apt install -y ros-melodic-mav*
-sudo apt install -y ros-melodic-serial*
-sudo apt install -y ros-melodic-rviz*
-sudo apt install -y ros-melodic-catkin
-sudo apt install -y libarmadillo-dev
+sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+sudo apt install python3-rosdep
 sudo rosdep init
 rosdep update
+sudo apt install -y ros-noetic-rqt*
+sudo apt install -y ros-noetic-mav*
+sudo apt install -y ros-noetic-serial*
+sudo apt install -y ros-noetic-rviz*
+sudo apt install -y ros-noetic-catkin
+sudo apt install -y libarmadillo-dev
 
 # ROS Related
-sudo apt install -y tree ros-melodic-smach ros-melodic-smach-ros ros-melodic-smach-msgs ros-melodic-viewer python-catkin-tools ros-melodic-catkin ros-melodic-vision-msgs ros-melodic-libboost-all-dev libeigen3-dev
+sudo apt install -y tree ros-noetic-smach ros-noetic-smach-ros ros-noetic-smach-msgs ros-noetic-viewer python-catkin-tools ros-noetic-catkin ros-noetic-vision-msgs ros-noetic-libboost-all-dev libeigen3-dev
 
 
 # 7 terminator
